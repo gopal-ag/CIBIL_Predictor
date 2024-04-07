@@ -8,6 +8,7 @@ import chai from "../assets/chai.jpeg";
 import LineComp from '../components/line';
 import { dataLine1 } from '../constants';
 
+
 export default function Market() {
     const [modalInfo, setModalInfo] = useState(null);
     const [profits, setProfits] = useState({});

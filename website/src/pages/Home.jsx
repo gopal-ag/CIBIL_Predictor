@@ -4,6 +4,8 @@ import { dataLine1, dataLine2, dataPie1, dataPie2, dataPie3, dataPie4 } from "..
 import sunny from "../assets/sunny.png"
 import ReactSpeedometer from "react-d3-speedometer"
 import React, { useState } from "react";
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export default function Home() {
 
@@ -15,12 +17,29 @@ export default function Home() {
             <div className="flex">
                 <div className="flex flex-col  w-3/4">
                     <div className="flex">
-                        <div className="flex m-5 border border-gray-300 rounded-xl w-2/3 max-h-64 shadow-md">
+                        <div className="flex m-5 border border-gray-300 rounded-xl w-2/3 max-h-64 shadow-md gap-5 px-5">
                             <h1 className="font-bold text-xl p-3">NPK Values</h1>
-                            <PieComp data={dataPie1} />
-                            <PieComp data={dataPie2} />
-                            <PieComp data={dataPie3} />
-                            <PieComp data={dataPie4} />
+                            <CircularProgressbar value={56} strokeWidth={15} text="Nitrogen" styles={buildStyles({
+                                textSize: "12px",
+                                pathColor: "#16a349",
+                                textColor: "#000"
+                            })} />
+                            <CircularProgressbar value={77} strokeWidth={15} text="Phosphorus" styles={buildStyles({
+                                textSize: "12px",
+                                pathColor: "#16a349",
+                                textColor: "#000"
+                            })} />
+                            <CircularProgressbar value={33} strokeWidth={15} text="Potassium" 
+                            styles={buildStyles({
+                                textSize: "12px",
+                                pathColor: "#16a349",
+                                textColor: "#000"
+                            })} />
+                            <CircularProgressbar value={73} strokeWidth={15} text="Moisture" styles={buildStyles({
+                                textSize: "12px",
+                                pathColor: "#16a349",
+                                textColor: "#000"
+                            })} />
                         </div>
                         <div className="m-5 border w-1/3 rounded-xl p-5 shadow-md flex flex-col items-center">
                             <h1 className="text-xl font-bold ">Climate</h1>
@@ -57,7 +76,7 @@ export default function Home() {
                 </div>
                 <div className="w-1/3 m-10 p-5 flex flex-col gap-4 items-center">
                     <div className="max-h-52">
-                    <ReactSpeedometer value={val} />
+                        <ReactSpeedometer value={val} />
                     </div>
                     <div className="text-center">
                         <h1 className="text-2xl font-bold">CIBIL Score</h1>
