@@ -2,6 +2,8 @@ import LineComp from "../components/line";
 import PieComp from "../components/pie/pie";
 import { dataLine1, dataLine2, dataPie1, dataPie2, dataPie3, dataPie4 } from "../constants";
 import sunny from "../assets/sunny.png"
+import ReactSpeedometer from "react-d3-speedometer"
+import React from "react";
 
 export default function Home() {
     return (
@@ -41,7 +43,6 @@ export default function Home() {
                 </div>
             </div>
 
-
             <hr />
 
             <div className="flex">
@@ -49,16 +50,21 @@ export default function Home() {
                     <h1 className="font-bold text-xl">Past Credit Score</h1>
                     <LineComp data={dataLine2} />
                 </div>
-                <div className="w-1/3 m-10 border-2 rounded-xl p-5">
-                    <h1 className="text-xl font-bold">Ways To Get Better Score:</h1>
-                    <li className="flex flex-col gap-3">
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                    </li>
+                <div className="w-1/3 m-10 p-5 flex flex-col gap-4 items-center ">
+                    <ReactSpeedometer value={579}/>
+                    <h1 className="text-2xl font-bold">CIBIL Score</h1>
                 </div>
             </div>
 
+            <div className="w-1/3 m-10 border-2 rounded-xl p-5 flex flex-col justify-around">
+                <h1 className="text-xl font-bold">Ways To Get Better Score:</h1>
+                <li className="flex flex-col gap-3">
+                    <li> Expand revenue sources through diversification</li>
+                    <li>Keep detailed financial records</li>
+                    <li>Invest in Farm Infrastructure</li>
+                    <li>Regular Credit Monitoring</li>
+                </li>
+            </div>
         </main>
     )
 }
