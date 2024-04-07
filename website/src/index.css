@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.buttonMarket {
+ @apply border px-6 py-3 rounded-xl border-none bg-gray-900 text-white hover:bg-gray-700 transition-all duration-200
+}
